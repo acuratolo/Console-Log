@@ -1,0 +1,69 @@
+<html>
+<head>
+<title>CONSOLE LOG - TEST</title>
+    <script type="text/javascript">
+
+    /*
+     * Example: Modify your font and add Color to your background
+     */
+      text = 'are you impressed?';
+      text = text.toUpperCase();
+
+      var args = [
+                '%c %c %c '+text+' %c %c %c',
+                'background: #0cf300',
+                'background: #00bc17',
+                'color: #ffffff; background: #00711f;',
+                'background: #00bc17',
+                'background: #0cf300',
+                'background: #00bc17'
+           ];
+
+    console.log.apply(console, args);
+
+
+    /* 
+     * Example: WebGL with Multistyle
+     */
+    var styles = {
+      your: "color: rgba(246, 116, 0, 1); font-weight: bold; font-size: 40px;text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);",
+      message: "color: rgba(51, 51, 51, 1); font-weight: bold; font-size: 40px;text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);",
+      normal: "color: rgba(51, 51, 51, 1); font-weight: bold; font-size: 14px;text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);",
+      emoji: function(emoji,mycolor) {
+        return "background: url(\"http://icons.iconarchive.com/icons/designbolts/free-valentine-heart/16/" + emoji + ".png\") no-repeat; background-size: cover; color:" + mycolor +";";
+      }
+    };
+
+     if (window.WebGLRenderingContext) {
+      console.log('WegGl: %c__', styles.emoji("Heart-Border-icon","red") );
+    } else {   
+      console.log('WegGl: %c__', styles.emoji("Heart-black-icon","black") );
+    }
+
+    /*
+     * Example: Modify your font-size and color
+     */
+    console.log('%cYour%c Message %c<<= insert ... hier', styles.your, styles.message, styles.normal );
+
+
+    </script>
+    <style>
+        h1 {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            margin: 10px auto;
+            width: 50%;
+            position: relative;
+            font-size: 40px;
+            background: -webkit-linear-gradient(#f00, #333);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            }
+    </style>
+</head>
+<body>
+	<h1>Look me in the 'console' baby!!!</h1>
+</body>
+</html>
